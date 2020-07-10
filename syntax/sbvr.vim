@@ -8,25 +8,29 @@ if exists("b:current_syntax")
 endif
 
 syn keyword sbvrTodo contained TODO FIXME XXX NOTE
-syn keyword sbvrTerm Vocabulary Necessity Rule Definition Note
 syn match sbvrComment "--.*$" contains=sbvrTodo
-syn match sbvrTerm "Fact.[tT]ype"
-syn match sbvrTerm "Term"
-syn match sbvrTerm "Term.[fF]orm"
-syn match sbvrTerm "Synonymous.[Ff]orm"
-syn match sbvrTerm "Concept.[Tt]ype"
-syn match sbvrTerm "Database.Table.Name"
-syn match sbvrTerm "Reference.Scheme"
-syn match sbvrConceptDef contained "File (Type)"
-syn match sbvrConceptDef contained "Text (Type)"
-syn match sbvrConceptDef contained "Big Integer (Type)"
-syn match sbvrConceptDef contained "Hashed (Type)"
-syn match sbvrConceptDef contained "Integer (Type)"
-syn match sbvrConceptDef contained "Short Text (Type)"
-syn match sbvrConceptDef contained "Date Time (Type)"
-syn match sbvrConceptDef contained "JSON (Type)"
-syn match sbvrConceptDef contained "Real (Type)"
-syn match sbvrType "Concept.[Tt]ype: .*$" contains=sbvrConceptDef
+syn match sbvrTerm "Concept.[Tt]ype:"
+syn match sbvrTerm "Database.Table.Name:"
+syn match sbvrTerm "Definition:"
+syn match sbvrTerm "Fact.[tT]ype:"
+syn match sbvrTerm "Necessity:"
+syn match sbvrTerm "Note:"
+syn match sbvrTerm "Reference.Scheme:"
+syn match sbvrTerm "Rule:"
+syn match sbvrTerm "Synonymous.[Ff]orm:"
+syn match sbvrTerm "Term.[fF]orm:"
+syn match sbvrTerm "Term:"
+syn match sbvrTerm "Vocabulary:"
+syn match sbvrConceptDef "Big Integer (Type)"
+syn match sbvrConceptDef "Date Time (Type)"
+syn match sbvrConceptDef "File (Type)"
+syn match sbvrConceptDef "Hashed (Type)"
+syn match sbvrConceptDef "Integer (Type)"
+syn match sbvrConceptDef "JSON (Type)"
+syn match sbvrConceptDef "Real (Type)"
+syn match sbvrConceptDef "Short Text (Type)"
+syn match sbvrConceptDef "Text (Type)"
+syn match sbvrType "Concept.[Tt]ype:" nextgroup=sbvrConceptDef skipwhite
 
 let b:current_syntax = "sbvr"
 
